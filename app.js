@@ -119,34 +119,46 @@ function makeAnimalsHungry() {
 }
 
 function payZooKeeper() {
+  let paycheck = 0
   animals.forEach(animal => {
     switch (animal.mood) {
       case '😵':
-        money -= 25
+        paycheck -= 25
         break;
 
       case '😵‍💫':
-        money += 5
+        paycheck += 5
         break;
 
       case '😐':
-        money += 15
+        paycheck += 15
         break;
 
       case '🙂':
-        money += 25
+        paycheck += 25
         break;
 
       case '😀':
-        money += 50
+        paycheck += 50
         break;
 
       default:
-        money += 0
+        paycheck += 0
         console.log('Something weird happened');
         break;
     }
   })
+
+  money += paycheck
+
+  Swal.fire({
+    position: "bottom",
+    icon: "success",
+    title: `Your paycheck was $${paycheck}`,
+    showConfirmButton: false,
+    timer: 1500
+  });
+
 
   drawMoney()
 }
@@ -164,4 +176,4 @@ setInterval(payZooKeeper, 5000)
 setTimeout(() => { console.log('this will run after 3 seconds') }, 3000)
 
 // @ts-ignore
-Swal.fire("SweetAlert2 is working!");
+// Swal.fire("SweetAlert2 is working!");
