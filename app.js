@@ -86,13 +86,25 @@ function drawAllAnimalsStats() {
 }
 
 function makeAnimalsHungry() {
-  console.log('making animals hungry');
   animals.forEach(animal => {
     animal.hunger--
 
     // NOTE clamp
     if (animal.hunger <= 0) {
       animal.hunger = 0
+      animal.mood = '😵'
+    }
+    else if (animal.hunger < 25) {
+      animal.mood = '😵‍💫'
+    }
+    else if (animal.hunger < 50) {
+      animal.mood = '😐'
+    }
+    else if (animal.hunger < 75) {
+      animal.mood = '🙂'
+    }
+    else {
+      animal.mood = '😀'
     }
 
   })
@@ -106,3 +118,6 @@ drawAllAnimalsStats()
 
 // NOTE if you pass a named function to setInterval, you do not invoke it. setInterval will invoke it for you (callback function)
 setInterval(makeAnimalsHungry, 1000)
+
+
+setTimeout(() => { console.log('this will run after 3 seconds') }, 3000)
