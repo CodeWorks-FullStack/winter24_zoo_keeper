@@ -5,19 +5,19 @@ const animals = [
     name: 'tiger',
     emoji: '🐅',
     mood: '😀',
-    hunger: 70
+    hunger: 100
   },
   {
     name: 'larry',
     emoji: '🦆',
     mood: '😀',
-    hunger: 30
+    hunger: 100
   },
   {
     name: 'oslo',
     emoji: '🦧',
-    mood: '😐',
-    hunger: 14
+    mood: '😀',
+    hunger: 100
   },
 ]
 
