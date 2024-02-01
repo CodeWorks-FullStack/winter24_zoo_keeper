@@ -161,6 +161,8 @@ function payZooKeeper() {
 
   money += paycheck
 
+  // NOTE comes from Sweet Alert JS library
+  // @ts-ignore
   Swal.fire({
     position: "bottom",
     icon: "success",
@@ -173,8 +175,11 @@ function payZooKeeper() {
   drawMoney()
 }
 
+
+// ANCHOR page load
 drawAllAnimalsStats()
 drawMoney()
+
 // NOTE first argument passed to setInterval is the function you want called, second argument is how often you want that function called in milliseconds
 // setInterval(() => { console.log('interval running') }, 3000)
 
