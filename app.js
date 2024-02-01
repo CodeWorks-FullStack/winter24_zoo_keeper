@@ -86,7 +86,7 @@ function drawAllAnimalsStats() {
 }
 
 function makeAnimalsHungry() {
-  // console.log('making animals hungry');
+  console.log('making animals hungry');
   animals.forEach(animal => {
     animal.hunger--
 
