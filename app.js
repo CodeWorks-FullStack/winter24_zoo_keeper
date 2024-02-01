@@ -19,11 +19,12 @@ const animals = [
   },
 ]
 
+// NOTE refactored into feedAnimal
 function feedTiger() {
   const foundTiger = animals.find(animal => animal.name == 'tiger')
   foundTiger.hunger++
 }
-
+// NOTE refactored into feedAnimal
 function feedLarry() {
   const foundLarry = animals.find(animal => animal.name == 'larry')
   foundLarry.hunger++
@@ -39,9 +40,10 @@ function feedAnimal(animalName) {
   }
 
   console.log(`My name is ${foundAnimal.name} and my hunger is ${foundAnimal.hunger}`);
-  drawAnimalStats()
+  drawAllAnimalsStats()
 }
 
+// NOTE refactored into drawAllAnimalsStats
 function drawTigerStats() {
   const tiger = animals.find(animal => animal.name == 'tiger')
 
@@ -50,10 +52,11 @@ function drawTigerStats() {
   // NOTE looks through the tiger element (col-4) for an element with the class of stats
   const statsElement = tigerElement.querySelector('.stats')
 
+  // NOTE @ts-ignore will ignore a red error in your js 
   // @ts-ignore
   statsElement.innerText = `${tiger.name} | ${tiger.mood} | Hunger: ${tiger.hunger}%`
 }
-
+// NOTE refactored into drawAllAnimalsStats
 function drawLarryStats() {
   const larry = animals.find(animal => animal.name == 'larry')
 
@@ -67,8 +70,10 @@ function drawLarryStats() {
   statsElement.innerText = `${larry.name} | ${larry.mood} | Hunger: ${larry.hunger}%`
 }
 
-function drawAnimalStats() {
+function drawAllAnimalsStats() {
   animals.forEach(animal => {
+
+    // NOTE this only works because my HTML has ids that match my animal names
     const animalElement = document.getElementById(animal.name)
     console.log(animalElement);
 
@@ -80,4 +85,4 @@ function drawAnimalStats() {
   })
 }
 
-drawAnimalStats()
+drawAllAnimalsStats()
