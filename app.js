@@ -34,6 +34,11 @@ function feedLarry() {
 
 function feedAnimal(animalName) {
   const foundAnimal = animals.find(animal => animal.name == animalName)
+
+  if (foundAnimal.hunger == 0) {
+    return
+  }
+
   foundAnimal.hunger++
 
   // NOTE CLAMP value
@@ -81,6 +86,11 @@ function drawAllAnimalsStats() {
 
     const statsElement = animalElement.querySelector('.stats')
     // console.log(statsElement);
+
+    if (animal.hunger == 0) {
+      const penElement = animalElement.querySelector('.animal-pen')
+      penElement.classList.add('farm-bg')
+    }
 
     // @ts-ignore
     statsElement.innerText = `${animal.name} | ${animal.mood} | Hunger: ${animal.hunger}%`
