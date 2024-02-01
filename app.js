@@ -12,3 +12,7 @@ const animals = [
     hunger: 50
   },
 ]
+
+function feedTiger() {
+  console.log('Button clicked');
+}
