@@ -75,20 +75,34 @@ function drawAllAnimalsStats() {
 
     // NOTE this only works because my HTML has ids that match my animal names
     const animalElement = document.getElementById(animal.name)
-    console.log(animalElement);
+    // console.log(animalElement);
 
     const statsElement = animalElement.querySelector('.stats')
-    console.log(statsElement);
+    // console.log(statsElement);
 
     // @ts-ignore
     statsElement.innerText = `${animal.name} | ${animal.mood} | Hunger: ${animal.hunger}%`
   })
 }
 
-
 function makeAnimalsHungry() {
-  animals.forEach(animal => animal.hunger--)
+  // console.log('making animals hungry');
+  animals.forEach(animal => {
+    animal.hunger--
+
+    // NOTE clamp
+    if (animal.hunger <= 0) {
+      animal.hunger = 0
+    }
+
+  })
   drawAllAnimalsStats()
 }
 
 drawAllAnimalsStats()
+
+// NOTE first argument passed to setInterval is the function you want called, second argument is how often you want that function called in milliseconds
+// setInterval(() => { console.log('interval running') }, 3000)
+
+// NOTE if you pass a named function to setInterval, you do not invoke it. setInterval will invoke it for you (callback function)
+setInterval(makeAnimalsHungry, 1000)
