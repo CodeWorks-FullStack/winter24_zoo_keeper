@@ -39,7 +39,7 @@ function feedAnimal(animalName) {
   }
 
   console.log(`My name is ${foundAnimal.name} and my hunger is ${foundAnimal.hunger}`);
-  drawTigerStats()
+  drawAnimalStats()
 }
 
 function drawTigerStats() {
@@ -80,4 +80,4 @@ function drawAnimalStats() {
   })
 }
 
-drawTigerStats()
+drawAnimalStats()
