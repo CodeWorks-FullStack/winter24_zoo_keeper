@@ -1,3 +1,5 @@
+let money = 0
+
 const animals = [
   {
     name: 'tiger',
@@ -85,6 +87,11 @@ function drawAllAnimalsStats() {
   })
 }
 
+function drawMoney() {
+  const moneyElement = document.getElementById('currentMoney')
+  moneyElement.innerText = money.toString()
+}
+
 function makeAnimalsHungry() {
   animals.forEach(animal => {
     animal.hunger--
@@ -111,13 +118,50 @@ function makeAnimalsHungry() {
   drawAllAnimalsStats()
 }
 
-drawAllAnimalsStats()
+function payZooKeeper() {
+  animals.forEach(animal => {
+    switch (animal.mood) {
+      case '😵':
+        money -= 25
+        break;
 
+      case '😵‍💫':
+        money += 5
+        break;
+
+      case '😐':
+        money += 15
+        break;
+
+      case '🙂':
+        money += 25
+        break;
+
+      case '😀':
+        money += 50
+        break;
+
+      default:
+        money += 0
+        console.log('Something weird happened');
+        break;
+    }
+  })
+
+  drawMoney()
+}
+
+drawAllAnimalsStats()
+drawMoney()
 // NOTE first argument passed to setInterval is the function you want called, second argument is how often you want that function called in milliseconds
 // setInterval(() => { console.log('interval running') }, 3000)
 
 // NOTE if you pass a named function to setInterval, you do not invoke it. setInterval will invoke it for you (callback function)
 setInterval(makeAnimalsHungry, 1000)
 
+setInterval(payZooKeeper, 5000)
 
 setTimeout(() => { console.log('this will run after 3 seconds') }, 3000)
+
+// @ts-ignore
+Swal.fire("SweetAlert2 is working!");
