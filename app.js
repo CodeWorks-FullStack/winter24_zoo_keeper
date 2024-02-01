@@ -85,4 +85,10 @@ function drawAllAnimalsStats() {
   })
 }
 
+
+function makeAnimalsHungry() {
+  animals.forEach(animal => animal.hunger--)
+  drawAllAnimalsStats()
+}
+
 drawAllAnimalsStats()
