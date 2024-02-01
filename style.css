@@ -17,6 +17,10 @@
   background-image: url(https://images.unsplash.com/photo-1594175268654-e60bea6c037c?q=80&w=2235&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
 }
 
+.jungle-bg {
+  background-image: url(https://images.unsplash.com/photo-1560851691-ebb64b584d3d?q=80&w=2398&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+}
+
 .animal {
   font-size: 4.2em;
   text-shadow: 1px 1px 5px black;

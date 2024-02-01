@@ -22,7 +22,7 @@
           <div class="animal-pen forest-bg">
             <marquee behavior="alternate" direction="up" scrollamount="6">
               <marquee behavior="alternate" direction="left" scrollamount="6">
-                <p onclick="feedTiger()" class="animal" role="button">🐅</p>
+                <p onclick="feedAnimal('Tiger')" class="animal" role="button">🐅</p>
               </marquee>
             </marquee>
           </div>
@@ -32,11 +32,21 @@
           <div class="animal-pen lake-bg">
             <marquee behavior="alternate" direction="down" scrollamount="8">
               <marquee behavior="alternate" direction="right" scrollamount="8">
-                <p onclick="feedLarry()" class="animal" role="button">🦆</p>
+                <p onclick="feedAnimal('Larry')" class="animal" role="button">🦆</p>
               </marquee>
             </marquee>
           </div>
           <p class="mt-2 fs-3 text-center">Larry | 😀 | Hunger: 100%</p>
+        </div>
+        <div class="col-md-4">
+          <div class="animal-pen jungle-bg">
+            <marquee behavior="alternate" direction="down" scrollamount="8">
+              <marquee behavior="alternate" direction="right" scrollamount="8">
+                <p onclick="feedAnimal('Oslo')" class="animal" role="button">🦧</p>
+              </marquee>
+            </marquee>
+          </div>
+          <p class="mt-2 fs-3 text-center">Oslo | 😀 | Hunger: 100%</p>
         </div>
       </div>
     </section>
