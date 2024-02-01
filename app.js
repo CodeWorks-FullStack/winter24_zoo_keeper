@@ -1,18 +1,18 @@
 const animals = [
   {
-    name: 'Tiger',
+    name: 'tiger',
     emoji: '🐅',
     mood: '😀',
     hunger: 50
   },
   {
-    name: 'Larry',
+    name: 'larry',
     emoji: '🦆',
     mood: '😀',
     hunger: 50
   },
   {
-    name: 'Oslo',
+    name: 'oslo',
     emoji: '🦧',
     mood: '😀',
     hunger: 50
@@ -20,17 +20,16 @@ const animals = [
 ]
 
 function feedTiger() {
-  const foundTiger = animals.find(animal => animal.name == 'Tiger')
+  const foundTiger = animals.find(animal => animal.name == 'tiger')
   foundTiger.hunger++
 }
 
 function feedLarry() {
-  const foundLarry = animals.find(animal => animal.name == 'Larry')
+  const foundLarry = animals.find(animal => animal.name == 'larry')
   foundLarry.hunger++
 }
 
 function feedAnimal(animalName) {
-  console.log(`feeding the animal with the name of ${animalName}`);
   const foundAnimal = animals.find(animal => animal.name == animalName)
   foundAnimal.hunger++
   console.log(`My name is ${foundAnimal.name} and my hunger is ${foundAnimal.hunger}`);
